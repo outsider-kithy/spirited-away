@@ -11,3 +11,6 @@
 # Built Visual Studio Code Extensions
 *.vsix
 .DS_Store
+img/.DS_Store
+models/.DS_Store
+build/.DS_Store
