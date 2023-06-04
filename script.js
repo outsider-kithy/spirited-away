@@ -19,13 +19,15 @@ function init(){
     scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0x010305, 5, 30);
     
-    camera = new THREE.PerspectiveCamera(45,window.innerWidth/window.innerHeight,1,1000);
+    camera = new THREE.PerspectiveCamera(45,window.innerWidth/window.innerHeight,1,100);
     camera.position.set(0, 10, 20);
 
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer(
+        { antialias: false,}
+    );
     renderer.setClearColor(0x010305);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(1);
 
     const ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(ambientLight);
@@ -109,10 +111,17 @@ function init(){
     const frequency = 0.5; //周波数
     let time = 0;//時間経過
 
+    let frame;
+
     render();
 
     function render(){
         requestAnimationFrame(render);
+
+        frame++;
+        if(frame % 2 == 0){
+            return;
+        }
 
         composer.render();
 
