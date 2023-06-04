@@ -140,6 +140,16 @@ function init(){
                 models_right.rotation.x += event.wheelDelta * 0.01;
             }
         }
+
+        //PC時のインタラクション
+        window.ontouchmove = function(event) {
+            let touch = event.touches[0];
+            if (touch.clientY > 0) {
+                water.material.uniforms['time'].value += touch.clientY * 0.01;
+                models_left.rotation.x += touch.clientY * 0.01;
+                models_right.rotation.x += touch.clientY * 0.01;
+            }
+        };
     }
 }
 
