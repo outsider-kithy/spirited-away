@@ -141,33 +141,33 @@ function init(){
             }
         }
 
-        //SP時のインタラクション
-        var startY = 0; // タッチ開始位置のY座標
-        var scrollAmount = 0; // スクロール量
+        // //SP時のインタラクション
+        // var startY = 0; // タッチ開始位置のY座標
+        // var scrollAmount = 0; // スクロール量
 
-        window.addEventListener('touchmove', function(event) {
-        // タッチイベントの最初のタッチポイントを取得
-            var touch = event.touches[0];
+        // window.addEventListener('touchmove', function(event) {
+        // // タッチイベントの最初のタッチポイントを取得
+        //     var touch = event.touches[0];
 
-            // タッチ開始位置のY座標を設定
-            if (startY === 0) {
-                startY = touch.pageY;
-            }
+        //     // タッチ開始位置のY座標を設定
+        //     if (startY === 0) {
+        //         startY = touch.pageY;
+        //     }
 
-            // タッチ移動距離を計算
-            var deltaY = touch.pageY - startY;
+        //     // タッチ移動距離を計算
+        //     var deltaY = touch.pageY - startY;
 
-            // スクロール量を更新
-            scrollAmount = -deltaY;
-            console.log(scrollAmount);
+        //     // スクロール量を更新
+        //     scrollAmount = -deltaY;
+        //     console.log(scrollAmount);
 
-            water.material.uniforms['time'].value += scrollAmount * 0.01;
-                models_left.rotation.x += scrollAmount * 0.01;
-                models_right.rotation.x += scrollAmount * 0.01;
+        //     water.material.uniforms['time'].value += scrollAmount * 0.01;
+        //     models_left.rotation.x += scrollAmount * 0.01;
+        //     models_right.rotation.x += scrollAmount * 0.01;
 
-            // スクロールイベントのデフォルト動作をキャンセル
-            event.preventDefault();
-        }, { passive: false });
+        //     // スクロールイベントのデフォルト動作をキャンセル
+        //     event.preventDefault();
+        // }, { passive: false });
 
     }
 }
