@@ -12,6 +12,11 @@ h1{
     margin: 1.0rem;
     color: rgba(255,255,255,0.5);
 }
+@media screen and (max-width:740px){
+    h1{
+        font-size: 1.0rem;
+    }
+}
 #scroll{
     position: fixed;
     width: 20%;
