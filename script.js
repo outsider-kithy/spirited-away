@@ -140,7 +140,6 @@ function init(){
                 models_right.rotation.x += event.wheelDelta * 0.01;
             }
         }
-
     }
 }
 
